@@ -1,0 +1,58 @@
+spring:
+  application:
+    name: poc-graph
+  main:
+    banner-mode: console
+  devtools:
+    restart:
+      enabled: false
+    livereload:
+      enabled: false
+  cassandra:
+    local-datacenter: datacenter1
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'health,metrics,prometheus'
+  endpoint:
+    health:
+      access: READ_ONLY
+      probes:
+        enabled: true
+      show-details: always
+    metrics:
+      access: READ_ONLY
+    prometheus:
+      access: READ_ONLY
+  health:
+    readinessstate:
+      enabled: true
+    livenessstate:
+      enabled: true
+    defaults:
+      enabled: true
+  tracing:
+    sampling:
+      # Trace 100% of requests
+      probability: 1.0
+logging:
+  file:
+    path: .
+app:
+  janusgraph:
+    config:
+      gremlin_graph: org.janusgraph.core.JanusGraphFactory
+      storage_backend: cql
+      storage_cql_keyspace: jgex
+      storage_hostname: localhost
+      index_jgex_backend: elasticsearch
+      index_jgex_index-name: jgex
+      index_jgex_hostname: localhost
+      index_jgex_elasticsearch_http_auth_type: custom
+      index_jgex_elasticsearch_http_auth_custom_authenticator-class: "com.acme.jga.graph.es.ElasticsearchAuthenticator"
+      index_jgex_elasticsearch_interface: REST_CLIENT
+      index_jgex_elasticsearch_http_auth_custom_authenticator-args: "7985b560-745a-489f-a487-7baff049796d,userName=elastic,secrets=test"
+      storage.cql.local-datacenter: datacenter1
+      basic.load-balancing-policy.local-datacenter: datacenter1
+
