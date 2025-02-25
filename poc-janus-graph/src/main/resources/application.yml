@@ -52,7 +52,7 @@ app:
       index_jgex_elasticsearch_http_auth_type: custom
       index_jgex_elasticsearch_http_auth_custom_authenticator-class: "com.acme.jga.graph.es.ElasticsearchAuthenticator"
       index_jgex_elasticsearch_interface: REST_CLIENT
-      index_jgex_elasticsearch_http_auth_custom_authenticator-args: "7985b560-745a-489f-a487-7baff049796d,userName=elastic,secrets=test"
+      index_jgex_elasticsearch_http_auth_custom_authenticator-args: "7985b560-745a-489f-a487-7baff049796d,userName=elastic,secrets=basicpass"
       storage.cql.local-datacenter: datacenter1
       basic.load-balancing-policy.local-datacenter: datacenter1
 

@@ -6,7 +6,10 @@ services:
     environment:
       JANUS_PROPS_TEMPLATE: cql-es
       janusgraph.storage.hostname: jce-cassandra
-      janusgraph.index.search.hostname: jce-elastic
+      janusgraph.index.search.hostname: jce-elasticsearch
+      janusgraph.index.search.elasticsearch.http.auth.type: basic
+      janusgraph.index.search.elasticsearch.http.auth.basic.username: elastic
+      janusgraph.index.search.elasticsearch.http.auth.basic.password: ${ELASTIC_PASSWORD:-}
     ports:
       - "8182:8182"
     networks:
