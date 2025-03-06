@@ -1,0 +1,30 @@
+meta {
+  name: GODS-LOAD
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{httpScheme}}://{{httpHost}}/{{baseUri}}/gods
+  body: none
+  auth: none
+}
+
+body:json {
+  {
+    "properties": [
+      {
+        "key": "name",
+        "value": "Chaos"
+      },
+      {
+        "key": "id",
+        "value": "{{uuid}}"
+      }
+    ]  
+  }
+}
+
+script:pre-request {
+  bru.setVar('uuid', require("uuid").v4());
+}

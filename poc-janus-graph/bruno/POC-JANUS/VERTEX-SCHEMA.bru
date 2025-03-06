@@ -1,0 +1,17 @@
+meta {
+  name: VERTEX-SCHEMA
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{httpScheme}}://{{httpHost}}/{{baseUri}}/schema
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "Chaos"
+  }
+}

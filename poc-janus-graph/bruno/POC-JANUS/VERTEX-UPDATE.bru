@@ -1,0 +1,30 @@
+meta {
+  name: VERTEX-UPDATE
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{httpScheme}}://{{httpHost}}/{{baseUri}}/vertex/Chaos
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "properties": [
+      {
+        "key": "name",
+        "value": "Chaos"
+      },
+      {
+        "key": "id",
+        "value": "{{uuid}}"
+      }
+    ]  
+  }
+}
+
+script:pre-request {
+  bru.setVar('uuid', require("uuid").v4());
+}

@@ -1,0 +1,30 @@
+meta {
+  name: GODS-FIND-BY-SHORT_NAME
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{httpScheme}}://{{httpHost}}/{{baseUri}}/gods/zeus
+  body: none
+  auth: none
+}
+
+body:json {
+  {
+    "properties": [
+      {
+        "key": "name",
+        "value": "Chaos"
+      },
+      {
+        "key": "id",
+        "value": "{{uuid}}"
+      }
+    ]  
+  }
+}
+
+script:pre-request {
+  bru.setVar('uuid', require("uuid").v4());
+}
