@@ -1,0 +1,1135 @@
+{
+  "gods": [
+    {
+      "name": "Chaos",
+      "shortName": "chaos",
+      "description": "Elément promordial, espace préexistant à toutes choses, et notamment à la lumière",
+      "gender": "m"
+    },
+    {
+      "name": "Nyx",
+      "shortName": "nyx",
+      "gender": "f",
+      "description": "Déesse de la nuit. fille du Chaos",
+      "father": "chaos"
+    },
+    {
+      "name": "Eris",
+      "shortName": "eris",
+      "gender": "f",
+      "description": "Déesse de la discorde. Fille de Nyx (la Nuit) et donne naissance seule, comme sa mère, à de nombreux enfants, tous méchants et malfaisants : Ponos (la Peine), Léthé (l'Oubli), Limos (la Faim), Phonoi et Makhai (les Meurtres et les Combats), Dysnomie et Até (l'Anomie et le Désastre), Algea (les Douleurs), Hysminai (les Mêlées), Androktasiai (les Tueries), Neikea (les Querelles), Amphillogiai (les Disputes), Pseudologoi (les Mensonges) et Horkos (le Serment) qui veille sans cesse sur les serments qu'il sanctionne, comme il punit sans pitié le parjure volontaire",
+      "mother": "nyx"
+    },
+    {
+      "name": "Erèbe",
+      "shortName": "erebe",
+      "gender": "m",
+      "description": "Personnification des ténèbres, l'obscurité des Enfers. Il est le frère et époux de Nyx (la Nuit), avec qui il a engendré d'abord Éther (le Ciel supérieur) et Héméra (le Jour) mais aussi Éléos (la Pitié), Épiphron (la Prudence) et Charon, le passeur des Enfers",
+      "father": "chaos"
+    },
+    {
+      "name": "Tartare",
+      "shortName": "tartare",
+      "gender": "n",
+      "description": "Abime profond, clos dans une triple enceinte d’airain, où sont tourmentés les pécheurs et où sont emprisonnés les Titans. On y accède par un seuil de bronze et une porte de fer. Fils du Chaos. Fratrie: Erebe, Eros, Gaia, Nyx",
+      "father": "chaos"
+    },
+    {
+      "name": "Eros",
+      "shortName": "eros",
+      "description": "Amour et puissance créatrice. ,Fils du Chaos et d'Aphrodite. Fratrie: Erebe, Gaia, Nyx, Tartare",
+      "gender": "m",
+      "father": "chaos",
+      "mother": "aphrodite"
+    },
+    {
+      "name": "Gaia",
+      "shortName": "gaia",
+      "description": "Déesse mère, mère des titans. Unie à Ouranos, le dieu du Ciel, elle engendra les six Titans et les six Titanides, puis les Cyclopes, suivi des Hécatonchires (les monstres aux cent bras) et enfin les Géants. De son frère Tartare, Gaïa donna naissance à une créature terrifiante, Typhon",
+      "gender": "f",
+      "father": "chaos"
+    },
+    {
+      "name": "Pontos",
+      "shortName": "pontos",
+      "description": "Personnification de la mer, fils de Gaïa (la Terre) qu'elle engendra seule. Uni à sa mère Gaia, ses descendants sont Nérée, Thaumas, Phorcys, Ceto et Eurybie",
+      "gender": "m",
+      "mother": "gaia"
+    },
+    {
+      "name": "Ouranos",
+      "shortName": "ouranos",
+      "description": "Personnification du ciel et de l'esprit démiurgique, Fils de Gaia",
+      "gender": "m",
+      "mother": "gaia"
+    },
+    {
+      "name": "Phorcys",
+      "shortName": "phorcys",
+      "description": "Monstre marin. Fils de Pontos (le Flot) et de Gaïa. Marié à sa soeur, Céto, il en a de nombreux enfants, tous des monstres hideux connus sous le nom de Phorcydes.",
+      "gender": "m",
+      "father": "pontos",
+      "mother": "gaia"
+    },
+    {
+      "name": "Céto",
+      "shortName": "ceto",
+      "description": "Monstre marin, fille de Pontos (le Flot) et de Gaïa",
+      "gender": "m",
+      "father": "pontos",
+      "mother": "gaia"
+    },
+    {
+      "name": "Sthéno",
+      "shortName": "stheno",
+      "description": "Créature fantastique immortelle, fille de Phorcys et Céto",
+      "gender": "f",
+      "category": "gorgone",
+      "father": "phorcys",
+      "mother": "ceto"
+    },
+    {
+      "name": "Euryale",
+      "shortName": "euryale",
+      "description": "Créature fantastique immortelle, fille de Phorcys et Céto",
+      "gender": "f",
+      "category": "gorgone",
+      "father": "phorcys",
+      "mother": "ceto"
+    },
+    {
+      "name": "Méduse",
+      "shortName": "meduse",
+      "description": "Créature mortelle, fille de Phorcys et Céto",
+      "gender": "f",
+      "category": "gorgone",
+      "father": "phorcys",
+      "mother": "ceto"
+    },
+    {
+      "name": "Cottos",
+      "shortName": "cottos",
+      "description": "Créature à 100 bras et cinquant têtes, Fils d'Ouranos (le ciel étoilé) et de Gaïa (la Terre)",
+      "gender": "m",
+      "category": "hecatonchires",
+      "father": "ouranos",
+      "mother": "gaia"
+    },
+    {
+      "name": "Briarée",
+      "shortName": "briaree",
+      "description": "Le fort, le redoutable, créature à 100 bras et cinquant têtes. Fils d'Ouranos (le ciel étoilé) et de Gaïa (la Terre)",
+      "gender": "f",
+      "category": "hecatonchires",
+      "father": "ouranos",
+      "mother": "gaia"
+    },
+    {
+      "name": "Gyes",
+      "shortName": "gyes",
+      "description": "Créature à 100 bras et cinquant têtes. Fils d'Ouranos (le ciel étoilé) et de Gaïa (la Terre)",
+      "gender": "m",
+      "category": "hecatonchires",
+      "father": "ouranos",
+      "mother": "gaia"
+    },
+    {
+      "name": "Héméra",
+      "shortName": "hemera",
+      "description": "Déesse du jour, incarne la lumière terrestre. Fille d'Erebe et Nyx",
+      "gender": "f",
+      "father": "erebe",
+      "mother": "nyx"
+    },
+    {
+      "name": "Ether",
+      "shortName": "ether",
+      "description": "Personnification du ciel dans sa partie supérieure, le domaine des autres dieux, la lumière céleste. Fils d'Erébe et Nyx",
+      "gender": "m"
+    },
+    {
+      "name": "Apaté",
+      "shortName": "apate",
+      "description": "Personification de la duperie, de la perfidie, de la fraude, de la déception. Fille de Nyx",
+      "gender": "f",
+      "mother": "nyx"
+    },
+    {
+      "name": "Dolos",
+      "shortName": "dolos",
+      "description": "Personification de la duperie, la supercherie, la ruse, la fourberie, la traîtrise. Fils de Nyx",
+      "gender": "f",
+      "mother": "nyx"
+    },
+    {
+      "name": "Géras",
+      "shortName": "geras",
+      "description": "Dieu de la vieillesse, fils de Nyx",
+      "gender": "m",
+      "mother": "nyx"
+    },
+    {
+      "name": "Hypnos",
+      "shortName": "hypnos",
+      "description": "Dieu du sommeil. Fils de Nyx et le frère jumeau de Thanatos, père de Morphée. Ses attributs sont le pavot et la corne",
+      "gender": "m",
+      "mother": "nyx"
+    },
+    {
+      "name": "Lyssa",
+      "shortName": "lyssa",
+      "description": "Divinité de la folie furieuse, de la colère, de la frénésie destructrice. Fille d'Ether et de Gaia",
+      "gender": "f",
+      "father": "ether",
+      "mother": "gaia"
+    },
+    {
+      "name": "Momos",
+      "shortName": "momos",
+      "description": "Dieu du sarcasme, de la moquerie, de la raillerie et des bons mots. Fils de Nyx",
+      "gender": "m",
+      "mother": "nyx",
+      "father": "erebe"
+    },
+    {
+      "name": "Moros",
+      "shortName": "moros",
+      "description": "Dieu de la mort violente, du sort implacable. Fille de Nyx",
+      "gender": "m",
+      "mother": "nyx"
+    },
+    {
+      "name": "Némésis",
+      "shortName": "nemesis",
+      "description": "Déesse de la vengeance et de la justice divine. Fille de Nyx",
+      "gender": "f",
+      "mother": "nyx"
+    },
+    {
+      "name": "Oizès",
+      "shortName": "oizes",
+      "description": "Déesse de la détresse, de la misère. fille de Nyx",
+      "gender": "f",
+      "mother": "nyx"
+    },
+    {
+      "name": "Philotès",
+      "shortName": "philotes",
+      "description": "Dieu de l'amour sexuel. Fille de Nyx",
+      "gender": "f",
+      "mother": "nyx"
+    },
+    {
+      "name": "Thanatos",
+      "shortName": "thanatos",
+      "description": "Dieu de la mort, fils de Nyx (la Nuit), épouse d'Érèbe (les Ténèbres), qu'elle a engendré seule, et est le frère jumeau d'Hypnos ",
+      "gender": "m",
+      "mother": "nyx"
+    },
+    {
+      "name": "Charon",
+      "shortName": "charon",
+      "description": "Nocher des enfers, fait payer le passage du styx, fils d'Érèbe (l'Obscurité) et de Nyx",
+      "gender": "m",
+      "father": "erebe",
+      "mother": "nyx"
+    },
+    {
+      "name": "Morphée",
+      "shortName": "morphee",
+      "description": "Divinité du songe et des rêves. Divinité mineure, un des Oneiroi, les mille enfants d'Hypnos. Fille d'Hypnos",
+      "gender": "f",
+      "category": "oneiroi",
+      "father": "hypnos"
+    },
+    {
+      "name": "Clotho",
+      "shortName": "clotho",
+      "description": "Tisseuse des destins des hommes et des dieux. Benjamine des trois Moires, celle qui tisse le fil de la vie. C'est à elle que revient le choix de la date de naissance de chacun",
+      "gender": "f",
+      "category": "Les moires",
+      "father": "zeus",
+      "mother": "themis"
+    },
+    {
+      "name": "Lachésis",
+      "shortName": "lachesis",
+      "description": "Tisseuse des destins des hommes et des dieux. Fille de Zeus et Thémis. Lachésis est celle qui mesure le fil né du fuseau de Clotho",
+      "gender": "f",
+      "category": "moires",
+      "father": "zeus",
+      "mother": "themis"
+    },
+    {
+      "name": "Atropos",
+      "shortName": "atropos",
+      "description": "Tisseuse des destins des hommes et des dieux, connue comme l'Inflexible. Fille de Zeus et Thémis. C'est Atropos qui choisit la forme de la mort et termine l'existence terrestre des mortels en leur coupant le fil de la vie",
+      "gender": "f",
+      "category": "Les moires",
+      "father": "zeus",
+      "mother": "themis"
+    },
+    {
+      "name": "Eglé",
+      "shortName": "egle",
+      "description": "Nymphe, la brillante",
+      "gender": "f",
+      "category": "hesperides",
+      "mother": "gaia",
+      "father": "ouranos"
+    },
+    {
+      "name": "Erythie",
+      "shortName": "erythie",
+      "description": "Nymphe, le soleil couchant",
+      "gender": "f",
+      "category": "hesperides",
+      "mother": "gaia",
+      "father": "ouranos"
+    },
+    {
+      "name": "Hespérie",
+      "shortName": "hespérie",
+      "description": "Nymphe",
+      "gender": "f",
+      "category": "hesperides",
+      "mother": "gaia",
+      "father": "ouranos"
+    },
+    {
+      "name": "Crios",
+      "shortName": "crios",
+      "description": "Le commandeur",
+      "gender": "m",
+      "category": "titan",
+      "mother": "gaia",
+      "father": "ouranos"
+    },
+    {
+      "name": "Brontès",
+      "shortName": "brontes",
+      "description": "Tonnerre. Fils d'Ouranos (le Ciel) et de Gaïa",
+      "gender": "m",
+      "category": "cyclope",
+      "mother": "gaia",
+      "father": "ouranos"
+    },
+    {
+      "name": "Stéropès",
+      "shortName": "steropes",
+      "description": "Eclair. Fils d'Ouranos (le Ciel) et de Gaïa",
+      "gender": "m",
+      "category": "cyclope",
+      "mother": "gaia",
+      "father": "ouranos"
+    },
+    {
+      "name": "Argès",
+      "shortName": "arges",
+      "description": "Foudre. Fils d'Ouranos (le Ciel) et de Gaïa",
+      "gender": "m",
+      "category": "cyclope",
+      "mother": "gaia",
+      "father": "ouranos"
+    },
+    {
+      "name": "Tisiphone",
+      "shortName": "tisiphone",
+      "description": "La vengeance, fille de Gaïa et du sang d'Ouranos",
+      "gender": "f",
+      "category": "erinyes",
+      "mother": "gaia"
+    },
+    {
+      "name": "Mégère",
+      "shortName": "megere",
+      "description": "La haine, fille de Gaïa et du sang d'Ouranos",
+      "gender": "f",
+      "category": "erinyes",
+      "mother": "gaia"
+    },
+    {
+      "name": "Alecto",
+      "shortName": "alecto",
+      "description": "L'implacable, fille de Gaïa et du sang d'Ouranos",
+      "gender": "f",
+      "category": "erinyes",
+      "mother": "gaia"
+    },
+    {
+      "name": "Dioné",
+      "shortName": "dione",
+      "description": "Fille d'Océan et Téthys",
+      "gender": "f",
+      "father": "ocean",
+      "mother": "tethys"
+    },
+    {
+      "name": "Aphrodite",
+      "shortName": "aphrodite",
+      "description": "Déesse de la germination, de l'amour, des plaisirs de la beauté, Fille de Zeus et de Dioné",
+      "gender": "f",
+      "father": "zeus",
+      "mother": "dione"
+    },
+    {
+      "name": "Mnémosyme",
+      "shortName": "mnemosyme",
+      "description": "Déesse de la mémoire, fille d'Ouranos (le Ciel) et de Gaïa (la Terre)",
+      "gender": "f",
+      "category": "titan",
+      "father": "ouranos",
+      "mother": "gaia"
+    },
+    {
+      "name": "Calliope",
+      "shortName": "calliope",
+      "description": "Muse de la posésie épique. Fille de Zeus et Mnémosyme",
+      "gender": "f",
+      "category": "muse",
+      "father": "zeus",
+      "mother": "mnemosyme"
+    },
+    {
+      "name": "Clio",
+      "shortName": "clio",
+      "description": "Muse de l'histoire. Fille de Zeus et Mnémosyme",
+      "gender": "f",
+      "category": "muse",
+      "father": "zeus",
+      "mother": "mnemosyme"
+    },
+    {
+      "name": "Erato",
+      "shortName": "erato",
+      "description": "Muse de la poésie lyrique et érotique. Fille de Zeus et Mnémosyme",
+      "gender": "f",
+      "category": "muse",
+      "father": "zeus",
+      "mother": "mnemosyme"
+    },
+    {
+      "name": "Euterpe",
+      "shortName": "euterpe",
+      "description": "Muse de la musique. Fille de Zeus et Mnémosyme",
+      "gender": "f",
+      "category": "muse",
+      "father": "zeus",
+      "mother": "mnemosyme"
+    },
+    {
+      "name": "Melpomène",
+      "shortName": "melpomene",
+      "description": "Muse du chant, de l'harmonie musicale et de la trégadie. Fille de Zeus et Mnémosyme",
+      "gender": "f",
+      "category": "muse",
+      "father": "zeus",
+      "mother": "mnemosyme"
+    },
+    {
+      "name": "Polymnie",
+      "shortName": "polymnie",
+      "description": "Muse de la réthorique, de l'éloquence. Fille de Zeus et Mnémosyme",
+      "gender": "f",
+      "category": "muse",
+      "father": "zeus",
+      "mother": "mnemosyme"
+    },
+    {
+      "name": "Terpsichore",
+      "shortName": "terpsichore",
+      "description": "Muse de la danse. Fille de Zeus et Mnémosyme",
+      "gender": "f",
+      "category": "muse",
+      "father": "zeus",
+      "mother": "mnemosyme"
+    },
+    {
+      "name": "Thalie",
+      "shortName": "thalie",
+      "description": "Muse de la commédie.  Fille de Zeus et Mnémosyme",
+      "gender": "f",
+      "category": "muse",
+      "father": "zeus",
+      "mother": "mnemosyme"
+    },
+    {
+      "name": "Uranie",
+      "shortName": "uranie",
+      "description": "Muse de l'astronomie et de l'astrologie.Elle est la mère de Linos, conçu avec Apollon, et d'Amphimaros, conçu avec Poséidon. Fille de Zeus et Mnémosyme",
+      "gender": "f",
+      "category": "muse",
+      "father": "zeus",
+      "mother": "mnemosyme"
+    },
+    {
+      "name": "Hypérion",
+      "shortName": "hyperion",
+      "description": "Soleil au zénith, fils d'Ouranos (le Ciel) et de Gaïa, épouse Théia, sa sœur, dont il a trois enfants : Hélios (le Soleil), Séléné (la Lune) et Éos (l'Aurore)",
+      "gender": "m",
+      "category": "titan",
+      "father": "ouranos",
+      "mother": "gaia"
+    },
+    {
+      "name": "Théia",
+      "shortName": "theia",
+      "description": "Fille d'Ouranos (le Ciel) et de Gaïa (la Terre), épouse et sœur d'Hypérion, avec qui elle conçoit Hélios, Séléné, Éos et Titan, Elle aurait créé tous les métaux précieux tels que l'or, l'argent, etc.",
+      "gender": "f",
+      "category": "titan",
+      "father": "ouranos",
+      "mother": "gaia"
+    },
+    {
+      "name": "Hélios",
+      "shortName": "helios",
+      "description": "Dieu du soleil, fils des Titans Hypérion et Théia",
+      "gender": "m",
+      "father": "hyperion",
+      "mother": "theia"
+    },
+    {
+      "name": "Séléné",
+      "shortName": "selene",
+      "description": "Déesse de la pleine lune, fille des Titans Hypérion et Théia, et a pour fratrie Hélios (le Soleil) et Éos (l'Aurore).",
+      "gender": "f",
+      "father": "hyperion",
+      "mother": "theia"
+    },
+    {
+      "name": "Eos",
+      "shortName": "eos",
+      "description": "Déesse de l'aurore, fille du Titan Hypérion et de la Titanide Théia",
+      "gender": "f",
+      "father": "hyperion",
+      "mother": "theia"
+    },
+    {
+      "name": "Japet",
+      "shortName": "japet",
+      "description": "Pilier du monde, fils d'Ouranos (le Ciel) et de Gaïa (la Terre). Père des Titans Prométhée, Épiméthée, Ménétios, Hespéros et Atlas, époux d'une fille de son frère Océan, l'Océanide Clymène ou d'une autre Océanide du nom d'Asia",
+      "gender": "m",
+      "category": "titan",
+      "father": "ouranos",
+      "mother": "gaia"
+    },
+    {
+      "name": "Thémis",
+      "shortName": "themis",
+      "description": "Représente la justice, la loi, l'équité. Elle est représentée avec une balance, un glaive et un bandeau. Fille d'Ouranos (le Ciel) et de Gaïa",
+      "gender": "f",
+      "category": "titan",
+      "father": "ouranos",
+      "mother": "gaia"
+    },
+    {
+      "name": "Téthys",
+      "shortName": "tethys",
+      "description": "Divinité promordiale du monde marin, benjamine des Titanides, fille d'Ouranos (le Ciel) et de Gaïa (la Terre), sœur et épouse d'Océan",
+      "gender": "f",
+      "category": "titan",
+      "father": "ouranos",
+      "mother": "gaia"
+    },
+    {
+      "name": "Océan",
+      "shortName": "ocean",
+      "description": "Divinité du monde marin, fils d'Ouranos (le Ciel) et de Gaïa (la Terre), frère et époux de Téthys",
+      "gender": "m",
+      "category": "titan",
+      "father": "ouranos",
+      "mother": "gaia"
+    },
+    {
+      "name": "Coéos",
+      "shortName": "coeos",
+      "description": "Représente la voute céleste, Fils d'Ouranos (ou d'Éther) et de Gaïa",
+      "gender": "m",
+      "category": "titan",
+      "father": "ouranos",
+      "mother": "gaia"
+    },
+    {
+      "name": "Phébé",
+      "shortName": "phébé",
+      "description": "Personnifiée par l'intelligence, fille d'Ouranos (le Ciel) et de Gaïa, mère de Léto et Astéria",
+      "gender": "f",
+      "category": "titan",
+      "father": "ouranos",
+      "mother": "gaia"
+    },
+    {
+      "name": "Rhéa",
+      "shortName": "rhea",
+      "description": "Mére de plusieurs dieux dont Zeus, reine des Titans et Titanide grecque de la Fertilité, fille d'Ouranos (le Ciel) et de Gaïa (la Terre)",
+      "gender": "f",
+      "category": "titan",
+      "father": "ouranos",
+      "mother": "gaia"
+    },
+    {
+      "name": "Cronos",
+      "shortName": "cronos",
+      "description": "Roi des titans et pére de Zeus. Fils d'Ouranos (le Ciel nocturne étoilé) et Gaïa.Son attribut principal est la faux, avec laquelle il a tranché le sexe de son père, Ouranos",
+      "gender": "m",
+      "category": "titan",
+      "father": "ouranos",
+      "mother": "gaia"
+    },
+    {
+      "name": "Hestia",
+      "shortName": "hestia",
+      "description": "Divinité du feu sacré, du foyer de la maison, fille aînée de Cronos et de Rhéa",
+      "gender": "f",
+      "father": "cronos",
+      "mother": "rhea"
+    },
+    {
+      "name": "Hadés",
+      "shortName": "hades",
+      "description": "Dieu des enfers. Frère de Zeus et de Poséidon, fils de Chronos et Rhéa ",
+      "gender": "m",
+      "father": "cronos",
+      "mother": "rhea"
+    },
+    {
+      "name": "Céos",
+      "shortName": "ceos",
+      "description": "Fils d'Ouranos et de Gaïa",
+      "gender": "m",
+      "category": "titan",
+      "father": "ouranos",
+      "mother": "gaia"
+    },
+    {
+      "name": "Phébé",
+      "shortName": "phebe",
+      "description": "Titanide, fille d'Ouranos (le Ciel) et de Gaïa (la Terre)",
+      "gender": "f",
+      "category": "titan",
+      "father": "ouranos",
+      "mother": "gaia"
+    },
+    {
+      "name": "Astéria",
+      "shortName": "asteria",
+      "description": "Dieu des enfers, fille du Titan Céos et de sa soeur Phébé",
+      "gender": "f",
+      "category": "titan",
+      "father": "ceos",
+      "mother": "phebe"
+    },
+    {
+      "name": "Poséidon",
+      "shortName": "poseidon",
+      "description": "Dieu de la mer, de la fureur des océans et des temblements de terre, fils de Cronos et de Rhéa, frère de Zeus",
+      "gender": "m",
+      "father": "cronos",
+      "mother": "rhea"
+    },
+    {
+      "name": "Héra",
+      "shortName": "hera",
+      "description": "Soeur et épouse de Zeus, reine des dieux et la déesse du mariage, fille de Cronos et Rhéa",
+      "gender": "f",
+      "father": "cronos",
+      "mother": "rhea"
+    },
+    {
+      "name": "Électryon",
+      "shortName": "electryon",
+      "description": "Fils de Persée et d'Andromède, est un roi de Mycènes",
+      "gender": "m",
+      "father": "persee",
+      "mother": "andromede"
+    },
+    {
+      "name": "tantale",
+      "shortName": "tantale",
+      "description": "Fils de Zeus et de la nymphe Ploutô, il est roi de Phrygie",
+      "gender": "m",
+      "father": "zeus"
+    },
+    {
+      "name": "Pélops",
+      "shortName": "pelops",
+      "description": "Fils de Tantale et Dioné, est l'ancêtre des Atrides à Mycènes et donna son nom au Péloponnèse.",
+      "gender": "m",
+      "father": "tantale",
+      "mother": "dione"
+    },
+    {
+      "name": "Androméde",
+      "shortName": "andromede",
+      "description": "Princesse éthiopienne. Fille du roi Céphée",
+      "gender": "f",
+      "father": "persee",
+      "mother": "cassiopee"
+    },
+    {
+      "name": "Cassiopée",
+      "shortName": "cassiopee",
+      "description": "Epouse de Céphée, roi d'Éthiopie. Elle prétendit un jour qu'elle-même ou que sa fille Andromède était plus belle que les Néréides, nymphes de la mer, elles aussi d'une très grande beauté",
+      "gender": "f"
+    },
+    {
+      "name": "Eurydice",
+      "shortName": "eurydice",
+      "description": "",
+      "gender": "f",
+      "father": "pelops"
+    },
+    {
+      "name": "Alcmnène",
+      "shortName": "alcmene",
+      "description": "Personne mortelle, fille d'Électryon et d'Eurydice, épouse d'Amphitryon et mère d'Iphiclès et d'Héraclès",
+      "gender": "f",
+      "father": "electryon",
+      "mother": "eurydice"
+    },
+    {
+      "name": "Danaé",
+      "shortName": "danae",
+      "description": "Fille d'Acrisios (roi d'Argos) et d'Eurydice",
+      "gender": "f",
+      "mother": "eurydice"
+    },
+    {
+      "name": "Hérakles",
+      "shortName": "herakles",
+      "description": "Douze travaux, fils de Zeus et d'Alcmène. La mythologie grecque lui prête un très grand nombre d’aventures qui le voient voyager à travers le monde",
+      "gender": "m",
+      "father": "zeus",
+      "mother": "alcmene"
+    },
+    {
+      "name": "Persée",
+      "shortName": "persee",
+      "description": "Fils de Zeus et Danaé, Roi d'Argos, décapite Méduse",
+      "gender": "m",
+      "father": "zeus",
+      "mother": "danae"
+    },
+    {
+      "name": "Zeus",
+      "shortName": "zeus",
+      "description": "Dieu du ciel, armé de la foudre, fils de Cronos et de Rhéa",
+      "gender": "m",
+      "father": "cronos",
+      "mother": "rhea"
+    },
+    {
+      "name": "Démeter",
+      "shortName": "demeter",
+      "description": "Déesse de l'agriculture, des moissons, à l'origine du mythe des saisons, fille de Cronos et de Rhéa",
+      "gender": "f",
+      "father": "cronos",
+      "mother": "rhea"
+    },
+    {
+      "name": "Léto",
+      "shortName": "leto",
+      "description": "Fille de Céos et Phébé, soeur d'Astéria",
+      "gender": "f",
+      "father": "ceos",
+      "mother": "phebe"
+    },
+    {
+      "name": "Hécate",
+      "shortName": "hecate",
+      "description": "Déesse protectrice des orateurs populaires au sein des assemblées, fille de Persée et Astéria",
+      "gender": "f",
+      "father": "persee",
+      "mother": "asteria"
+    },
+    {
+      "name": "Métis",
+      "shortName": "metis",
+      "description": "Océnide incarnant la ruse, fille d'Océan et de Téthys.",
+      "gender": "f",
+      "father": "ocean",
+      "mother": "tethys"
+    },
+    {
+      "name": "Pléioné",
+      "shortName": "pleione",
+      "description": "Fille d'Océan et Téthys",
+      "gender": "f",
+      "father": "ocean",
+      "mother": "tethys"
+    },
+    {
+      "name": "Clymène",
+      "shortName": "clymene",
+      "description": "Fille d'Océan et Téthys",
+      "gender": "f",
+      "father": "ocean",
+      "mother": "tethys"
+    },
+    {
+      "name": "Atlas",
+      "shortName": "atlas",
+      "description": "Port le monde sur ses épaules, fils de Japet et Clymène",
+      "gender": "m",
+      "category": "titan",
+      "father": "japet",
+      "mother": "clymene"
+    },
+    {
+      "name": "Prométhée",
+      "shortName": "promethee",
+      "description": "Vole le feu et le donne aux hommes, fils de Japet et Thémis",
+      "gender": "m",
+      "category": "titan",
+      "father": "japet",
+      "mother": "themis"
+    },
+    {
+      "name": "Perséphone",
+      "shortName": "persephone",
+      "description": "Déesse des enfers, fille de Zeus et de Déméter",
+      "gender": "f",
+      "father": "zeus",
+      "mother": "demeter"
+    },
+    {
+      "name": "Athéna",
+      "shortName": "athena",
+      "description": "Déesse de la raison, de la prudence et de la sagesse, fille de Zeus et Métis",
+      "gender": "f",
+      "father": "zeus",
+      "mother": "metis"
+    },
+    {
+      "name": "Artémis",
+      "shortName": "artemis",
+      "description": "Déesse de la chasse, fille de Zeus et Léto",
+      "gender": "f",
+      "father": "zeus",
+      "mother": "leto"
+    },
+    {
+      "name": "Héphaistos",
+      "shortName": "hephaistos",
+      "description": "Dieu du feu, des volcans et des forges, fils de Zeus et Héra",
+      "gender": "m",
+      "father": "zeus",
+      "mother": "hera"
+    },
+    {
+      "name": "Hébé",
+      "shortName": "hebe",
+      "description": "Déesse de la jeunesse, la vitalité de la vigeur des jeunes, fille de Zeus et Héra",
+      "gender": "f",
+      "father": "zeus",
+      "mother": "hera"
+    },
+    {
+      "name": "Ilithye",
+      "shortName": "ilithye",
+      "description": "Déesse de l'enfantement, fille de Zeus et Héra",
+      "gender": "f",
+      "father": "zeus",
+      "mother": "hera"
+    },
+    {
+      "name": "Arès",
+      "shortName": "ares",
+      "description": "Dieu de la guerre, de la brutalité, du carnage et de la destruction, fils de Zeus et de Héra",
+      "gender": "m",
+      "father": "zeus",
+      "mother": "hera"
+    },
+    {
+      "name": "Arné",
+      "shortName": "arne",
+      "description": "Connue pour être la mère d'Éole et Béotos — homonyme distinct des deux précédents — conçus avec Poséidon",
+      "gender": "f"
+    },
+    {
+      "name": "Eole",
+      "shortName": "eole",
+      "description": "Dieu du vent, fils d'Hippotés, fils de Poséidon et Arné",
+      "gender": "m",
+      "father": "poseidon",
+      "mother": "arne"
+    },
+    {
+      "name": "Apollon",
+      "shortName": "apollon",
+      "description": "Dieu du chant, de la musique et de la poésie, fils de Zeus et Léto",
+      "gender": "m",
+      "father": "zeus",
+      "mother": "leto"
+    },
+    {
+      "name": "Coronis",
+      "shortName": "coronis",
+      "description": "Fille de Phlégias (roi des Lapithes), est la mère d'Asclépios",
+      "gender": "f"
+    },
+    {
+      "name": "Asclépios",
+      "shortName": "asclepios",
+      "description": "Dieu de la médecine, fils d'Apollon et de Coronis",
+      "gender": "m",
+      "father": "apollon",
+      "mother": "coronis"
+    },
+    {
+      "name": "Ethra",
+      "shortName": "ethra",
+      "description": "Océanide",
+      "gender": "f",
+      "father": "ocean",
+      "mother": "tethys"
+    },
+    {
+      "name": "Ambroisie",
+      "shortName": "ambroisie",
+      "description": "Nymphes des pluies, une des hyades, nourrices de Zeus puis de Dionysos. Elle est la fille d' Océan ou Atlas et de Pléioné ou Éthra",
+      "gender": "f",
+      "category": "hyades",
+      "father": "ocean",
+      "mother": "ethra"
+    },
+    {
+      "name": "Cléeia",
+      "shortName": "cleeia",
+      "description": "Nymphes des pluies",
+      "gender": "f",
+      "category": "hyades",
+      "father": "ocean",
+      "mother": "ethra"
+    },
+    {
+      "name": "Coronis",
+      "shortName": "coronis",
+      "description": "Nymphes des pluies",
+      "gender": "f",
+      "category": "hyades",
+      "father": "ocean",
+      "mother": "ethra"
+    },
+    {
+      "name": "Eudore",
+      "shortName": "eudore",
+      "description": "Nymphes des pluies",
+      "gender": "f",
+      "category": "hyades",
+      "father": "ocean",
+      "mother": "ethra"
+    },
+    {
+      "name": "Esylé",
+      "shortName": "esyle",
+      "description": "Nymphes des pluies",
+      "gender": "f",
+      "category": "hyades",
+      "father": "ocean",
+      "mother": "ethra"
+    },
+    {
+      "name": "Ployxo",
+      "shortName": "ploxyo",
+      "description": "Nymphes des pluies",
+      "gender": "f",
+      "category": "hyades",
+      "father": "ocean",
+      "mother": "ethra"
+    },
+    {
+      "name": "Dioné",
+      "shortName": "dioné",
+      "description": "Nymphes des pluies",
+      "gender": "f",
+      "category": "hyades",
+      "father": "ocean",
+      "mother": "ethra"
+    },
+    {
+      "name": "Phaéo",
+      "shortName": "phaeo",
+      "description": "Nymphes des pluies",
+      "gender": "f",
+      "category": "hyades",
+      "father": "ocean",
+      "mother": "ethra"
+    },
+    {
+      "name": "Pandore",
+      "shortName": "pandore",
+      "description": "Première femme humaine, façonnée dans l'argile par Héphaïstos et animée par la déesse Athéna. La curiosité de Pandore l'a amenée à ouvrir un récipient laissé à la garde de son mari, libérant ainsi des malédictions physiques et émotionnelles sur l'humanité",
+      "gender": "f",
+      "father": "hephaistos"
+    },
+    {
+      "name": "Epiméthée",
+      "shortName": "epimethee",
+      "description": "Titan, fils de Japet et Clymène, frère d'Atlas, de Ménétios et de Prométhée",
+      "gender": "m",
+      "category": "titan",
+      "father": "japet",
+      "mother": "clymene"
+    },
+    {
+      "name": "Pyrrha",
+      "shortName": "pyrrha",
+      "description": "Fille du Titan Épiméthée et de Pandore, est l'épouse de Deucalion",
+      "gender": "f",
+      "mother": "pandore",
+      "father": "epimethee"
+    },
+    {
+      "name": "Deucalion",
+      "shortName": "deucalion",
+      "description": "Fils du Titan Prométhée et de Pronoia, seul survivant avec sa cousine et femme Pyrrha, du Déluge décidé par Zeus1",
+      "gender": "m",
+      "father": "promethee"
+    },
+    {
+      "name": "Pronoia",
+      "shortName": "pronoia",
+      "description": "Fille d'Océan et de Téthys, personnifie la prévoyance, épouse de Prométhée, de qui elle a Deucalion",
+      "gender": "f",
+      "father": "ocean",
+      "mother": "tethys"
+    },
+    {
+      "name": "Hermès",
+      "shortName": "hermes",
+      "description": "Fils de Zeus et de Maïa, donneur de la chance, inventeur des poids et des mesures, gardien des routes et carrefours, il est le dieu des voyageurs, des bergers, des commerçants, des voleurs et des orateurs. Il conduit les âmes aux Enfers",
+      "gender": "m",
+      "father": "zeus",
+      "mother": "maia"
+    },
+    {
+      "name": "Pan",
+      "shortName": "pan",
+      "description": "Dieu de la totalité de la nature, protecteur des troupeaux et des bergers, fils d'Hermès et d'une « fille de Dryops » qui n'est pas nommée",
+      "gender": "m",
+      "father": "hermes"
+    },
+    {
+      "name": "Dionysos",
+      "shortName": "dionysos",
+      "description": "Dieu de la vigne, du vin, de la fête et de ses excès, fils de Zeus et de Sémélé",
+      "gender": "m",
+      "father": "zeus",
+      "mother": "semele"
+    },
+    {
+      "name": "Sémélé",
+      "shortName": "semele",
+      "description": "Héroïne divinisée, l'une des maîtresses de Zeus et, selon la tradition thébaine, la mère du dieu Dionysos",
+      "gender": "m"
+    },
+    {
+      "name": "Sisyphe",
+      "shortName": "sisyphe",
+      "description": "fils d'Éole et d'Énarété, fondateur de Corynthe, époux de la Pléiade Mérope, connu pour son châtiment, consistant à pousser une pierre au sommet d'une montagne, d'où elle finit toujours par retomber.",
+      "gender": "m",
+      "father": "eole"
+    },
+    {
+      "name": "Mérope",
+      "shortName": "merope",
+      "description": "Une des sept pléiades, la benjamine, fille d'Atlas et de Pléioné, épouse de Sisyphe, mère d'Ornytion, Sinon et Glaucos",
+      "gender": "f",
+      "category": "pleiade",
+      "father": "atlas",
+      "mother": "pleione"
+    },
+    {
+      "name": "Maia",
+      "shortName": "maia",
+      "description": "Une des sept pléiades, mère d'hermés",
+      "gender": "f",
+      "category": "pleiade",
+      "father": "atlas",
+      "mother": "pleione"
+    },
+    {
+      "name": "Alcyone",
+      "shortName": "alcyone",
+      "description": "Une des sept pléiades",
+      "gender": "f",
+      "category": "pleiade",
+      "father": "atlas",
+      "mother": "pleione"
+    },
+    {
+      "name": "Astérope",
+      "shortName": "asterope",
+      "description": "Une des sept pléiades",
+      "gender": "f",
+      "category": "pleiade",
+      "father": "atlas",
+      "mother": "pleione"
+    },
+    {
+      "name": "Céléno",
+      "shortName": "celeon",
+      "description": "Une des sept pléiades",
+      "gender": "f",
+      "category": "pleiade",
+      "father": "atlas",
+      "mother": "pleione"
+    },
+    {
+      "name": "Céléno",
+      "shortName": "celeon",
+      "description": "Une des sept pléiades",
+      "gender": "f",
+      "category": "pleiade",
+      "father": "atlas",
+      "mother": "pleione"
+    },
+    {
+      "name": "Electre",
+      "shortName": "electre",
+      "description": "Une des sept pléiades",
+      "gender": "f",
+      "category": "pleiade",
+      "father": "atlas",
+      "mother": "pleione"
+    },
+    {
+      "name": "Taytgète",
+      "shortName": "taygete",
+      "description": "Une des sept pléiades",
+      "gender": "f",
+      "category": "pleiade",
+      "father": "atlas",
+      "mother": "pleione"
+    },
+    {
+      "name": "Glaucos",
+      "shortName": "glaucos",
+      "description": "Divinité marine",
+      "gender": "f",
+      "father": "poseidon"
+    },
+    {
+      "name": "Eurynomé",
+      "shortName": "euronyme",
+      "description": "Épouse de Glaucos (roi de Corinthe), elle est la mère de Bellérophon ",
+      "gender": "f"
+    },
+    {
+      "name": "Bellérophon",
+      "shortName": "bellorophon",
+      "description": "Roi de corynthe, tueur de la chimère",
+      "gender": "m",
+      "father": "poseidon",
+      "mother": "euronyme"
+    },
+    {
+      "name": "Ornytion",
+      "shortName": "ornytion",
+      "description": "Roi de corynthe, fils de sisyphe et mérope",
+      "gender": "m",
+      "father": "sisyphe"
+    }
+  ]
+}

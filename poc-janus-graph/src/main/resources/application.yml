@@ -32,10 +32,6 @@ management:
       enabled: true
     defaults:
       enabled: true
-  tracing:
-    sampling:
-      # Trace 100% of requests
-      probability: 1.0
 logging:
   file:
     path: .

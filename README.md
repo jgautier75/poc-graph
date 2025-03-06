@@ -16,3 +16,9 @@ Containers
 | logstash        | 8.17.2                        | 5044 | Logstash                                  |
 | janusgraph      | 1.2.0-20250219-143145.6c030f7 | 8182 | JanusGraph                                |
 | cassandra       | 4.0.17                        | 9042 | Cassandra                                 |                               
+
+
+:remote connect tinkerpop.server conf/remote.yaml
+:remote console
+graph
+ --> ==>standardjanusgraph[cql:[jce-cassandra]]
