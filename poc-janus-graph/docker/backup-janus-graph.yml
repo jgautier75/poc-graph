@@ -1,0 +1,147 @@
+version: "3.1"
+services:
+  janusgraph:
+    image: janusgraph/janusgraph:latest
+    container_name: jce-janus-graph
+    environment:
+      JANUS_PROPS_TEMPLATE: cql-es
+      janusgraph.storage.hostname: jce-cassandra
+      janusgraph.index.search.hostname: jce-elasticsearch
+      janusgraph.index.search.elasticsearch.http.auth.type: basic
+      janusgraph.index.search.elasticsearch.http.auth.basic.username: elastic
+      janusgraph.index.search.elasticsearch.http.auth.basic.password: ${ELASTIC_PASSWORD:-}
+    ports:
+      - "8182:8182"
+    networks:
+      - jce-network
+    volumes:
+      - "./config/cql-es.properties:/opt/janusgraph/conf/cql-es.properties"
+    healthcheck:
+      test: [ "CMD", "bin/gremlin.sh", "-e", "scripts/remote-connect.groovy" ]
+      interval: 10s
+      timeout: 30s
+      retries: 3
+  gremlin:
+    image: janusgraph/janusgraph:latest
+    container_name: gremlin
+    volumes:
+      - "./config/cql-es.properties:/opt/janusgraph/conf/cql-es.properties"
+    links:
+      - janusgraph
+    networks:
+      - jce-network
+    environment:
+      GREMLIN_REMOTE_HOSTS: janusgraph
+  graphexp:
+    image: jga-graphexp:latest
+    container_name: jce-graphexp
+    ports:
+      - "80:80"
+  cassandra:
+    image: cassandra:4.0.17
+    container_name: jce-cassandra
+    ports:
+      - "9042:9042"
+      - "9160:9160"
+    networks:
+      - jce-network
+  elasticsearch:
+    build:
+      context: elasticsearch/
+      args:
+        ELASTIC_VERSION: ${ELASTIC_VERSION}
+    volumes:
+      - ./elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro,Z
+      - ./esdata:/usr/share/elasticsearch/data:Z
+    container_name: jce-elasticsearch
+    ports:
+      - 9200:9200
+      - 9300:9300
+    environment:
+      node.name: elasticsearch
+      ES_JAVA_OPTS: -Xms512m -Xmx512m
+      # Bootstrap password.
+      # Used to initialize the keystore during the initial startup of
+      # Elasticsearch. Ignored on subsequent runs.
+      ELASTIC_PASSWORD: ${ELASTIC_PASSWORD:-}
+      # Use single node discovery in order to disable production mode and avoid bootstrap checks.
+      # see: https://www.elastic.co/guide/en/elasticsearch/reference/current/bootstrap-checks.html
+      discovery.type: single-node
+    networks:
+      - jce-network
+    restart: unless-stopped
+  logstash:
+    build:
+      context: logstash/
+      args:
+        ELASTIC_VERSION: ${ELASTIC_VERSION}
+    volumes:
+      - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml:ro,Z
+      - ./logstash/pipeline:/usr/share/logstash/pipeline:ro,Z
+    container_name: jce-logstash
+    ports:
+      - 5044:5044
+      - 50000:50000/tcp
+      - 50000:50000/udp
+      - 9600:9600
+    environment:
+      LS_JAVA_OPTS: -Xms256m -Xmx256m
+      LOGSTASH_INTERNAL_PASSWORD: ${LOGSTASH_INTERNAL_PASSWORD:-}
+    networks:
+      - jce-network
+    depends_on:
+      - elasticsearch
+    restart: unless-stopped
+  kibana:
+    build:
+      context: kibana/
+      args:
+        ELASTIC_VERSION: ${ELASTIC_VERSION}
+    volumes:
+      - ./kibana/config/kibana.yml:/usr/share/kibana/config/kibana.yml:ro,Z
+    container_name: jce-kibana
+    ports:
+      - 5601:5601
+    environment:
+      KIBANA_SYSTEM_PASSWORD: ${KIBANA_SYSTEM_PASSWORD:-}
+    networks:
+      - jce-network
+    depends_on:
+      - elasticsearch
+    restart: unless-stopped
+  setup:
+    profiles:
+      - setup
+    build:
+      context: setup/
+      args:
+        ELASTIC_VERSION: ${ELASTIC_VERSION}
+    init: true
+    volumes:
+      - ./setup/entrypoint.sh:/entrypoint.sh:ro,Z
+      - ./setup/lib.sh:/lib.sh:ro,Z
+      - ./setup/roles:/roles:ro,Z
+    environment:
+      ELASTIC_PASSWORD: ${ELASTIC_PASSWORD:-}
+      LOGSTASH_INTERNAL_PASSWORD: ${LOGSTASH_INTERNAL_PASSWORD:-}
+      KIBANA_SYSTEM_PASSWORD: ${KIBANA_SYSTEM_PASSWORD:-}
+      METRICBEAT_INTERNAL_PASSWORD: ${METRICBEAT_INTERNAL_PASSWORD:-}
+      FILEBEAT_INTERNAL_PASSWORD: ${FILEBEAT_INTERNAL_PASSWORD:-}
+      HEARTBEAT_INTERNAL_PASSWORD: ${HEARTBEAT_INTERNAL_PASSWORD:-}
+      MONITORING_INTERNAL_PASSWORD: ${MONITORING_INTERNAL_PASSWORD:-}
+      BEATS_SYSTEM_PASSWORD: ${BEATS_SYSTEM_PASSWORD:-}
+    networks:
+      - jce-network
+    depends_on:
+      - elasticsearch
+networks:
+  jce-network:
+volumes:
+  elasticsearch:
+    driver: local
+  esdata:
+    driver: local
+  logstash:
+    driver: local
+  kibana:
+    driver: local

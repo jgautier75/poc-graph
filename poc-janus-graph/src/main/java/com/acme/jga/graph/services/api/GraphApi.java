@@ -9,10 +9,10 @@ import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
 public interface GraphApi {
-    void createSchema() throws ExecutionException, InterruptedException;
+   /* void createSchema() throws ExecutionException, InterruptedException;
     String createVertex(VertexDto vertexDto);
     String findVertexByUid(String uid);
-    void updateVertex(UpdateVertexDto updateVertexDto);
+    void updateVertex(UpdateVertexDto updateVertexDto);*/
     void loadGoads() throws IOException;
     VertexReadDto findGodByShortName(String name);
 }

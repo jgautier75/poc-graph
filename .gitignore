@@ -22,3 +22,15 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+/.idea/.gitignore
+/.idea/checkstyle-idea.xml
+/.idea/compiler.xml
+/.idea/encodings.xml
+/.idea/jarRepositories.xml
+/.idea/misc.xml
+/.idea/uiDesigner.xml
+/.idea/vcs.xml
+/poc-janus-graph/target/classes/application.yml
+/poc-janus-graph/target/classes/gods.json
+/poc-janus-graph/target/classes/remote-graph.properties
+/poc-janus-graph/target/classes/remote-objects.yaml

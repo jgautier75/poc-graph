@@ -1,7 +1,7 @@
 # JanusGraph
 
 ```bash
-docker-compose -f janus-graph.yml --profile setup up -d
+docker-compose -f janus-graph.yml up -d
 ```
 
 Credits: https://github.com/deviantony/docker-elk
@@ -17,8 +17,30 @@ Containers
 | janusgraph      | 1.2.0-20250219-143145.6c030f7 | 8182 | JanusGraph                                |
 | cassandra       | 4.0.17                        | 9042 | Cassandra                                 |                               
 
+**Connecting to Janus Graph**
 
-:remote connect tinkerpop.server conf/remote.yaml
-:remote console
-graph
- --> ==>standardjanusgraph[cql:[jce-cassandra]]
+* First enter janus graph container
+
+```bash
+docker exec -it jce-janusgraph bash
+```
+
+* Then launch gremlin
+
+```bash
+bin/gremlin.sh
+```
+
+* Then connect to JanuGraph backend (cassandra)
+
+```bash
+graph = JanusGraphFactory.open('cql:cassandra')
+g = graph.traversal()
+g.V().count()
+```
+
+* Once done, launch spring-boot PocGraph application
+
+* Create schema, vertices and edges either using "VERTEX-SCHEMA" in "Bruno" collection or use curl
+
+curl - X POST http://localhost:8080/api/v1/schema

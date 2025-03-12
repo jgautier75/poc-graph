@@ -40,15 +40,10 @@ app:
     config:
       gremlin_graph: org.janusgraph.core.JanusGraphFactory
       storage_backend: cql
-      storage_cql_keyspace: jgex
       storage_hostname: localhost
+      storage_cql_keyspace: jgex
+      storage.cql.local-datacenter: datacenter1
+      basic.load-balancing-policy.local-datacenter: datacenter1
       index_jgex_backend: elasticsearch
       index_jgex_index-name: jgex
       index_jgex_hostname: localhost
-      index_jgex_elasticsearch_http_auth_type: custom
-      index_jgex_elasticsearch_http_auth_custom_authenticator-class: "com.acme.jga.graph.es.ElasticsearchAuthenticator"
-      index_jgex_elasticsearch_interface: REST_CLIENT
-      index_jgex_elasticsearch_http_auth_custom_authenticator-args: "7985b560-745a-489f-a487-7baff049796d,userName=elastic,secrets=basicpass"
-      storage.cql.local-datacenter: datacenter1
-      basic.load-balancing-policy.local-datacenter: datacenter1
-
