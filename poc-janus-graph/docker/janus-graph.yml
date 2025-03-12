@@ -19,8 +19,15 @@ services:
     image: cassandra:4.0.17
     container_name: jce-cassandra
     ports:
-      - "9042:9042"
+      - "9042:9042" # Cassandra CQL port
       - "9160:9160"
+    volumes:
+      - "./cassandra_data:/var/lib/cassandra"
+    healthcheck:
+      test: [ "CMD", "nodetool", "status" ]
+      interval: 30s
+      retries: 5
+      timeout: 10s
     networks:
       - jce-network
   elasticsearch:
