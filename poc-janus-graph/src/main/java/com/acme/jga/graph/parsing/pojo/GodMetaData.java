@@ -11,5 +11,6 @@ public class GodMetaData {
     public static final String FATHER = "father";
     public static final String MOTHER = "mother";
     public static final String CATEGORY = "category";
+    public static final String MARRIED = "married";
 
 }

@@ -25,7 +25,8 @@
       "shortName": "erebe",
       "gender": "m",
       "description": "Personnification des ténèbres, l'obscurité des Enfers. Il est le frère et époux de Nyx (la Nuit), avec qui il a engendré d'abord Éther (le Ciel supérieur) et Héméra (le Jour) mais aussi Éléos (la Pitié), Épiphron (la Prudence) et Charon, le passeur des Enfers",
-      "father": "chaos"
+      "father": "chaos",
+      "married": "nyx"
     },
     {
       "name": "Tartare",
@@ -37,7 +38,7 @@
     {
       "name": "Eros",
       "shortName": "eros",
-      "description": "Amour et puissance créatrice. ,Fils du Chaos et d'Aphrodite. Fratrie: Erebe, Gaia, Nyx, Tartare",
+      "description": "Amour et puissance créatrice. Fils du Chaos et d'Aphrodite. Fratrie: Erebe, Gaia, Nyx, Tartare",
       "gender": "m",
       "father": "chaos",
       "mother": "aphrodite"
@@ -47,14 +48,16 @@
       "shortName": "gaia",
       "description": "Déesse mère, mère des titans. Unie à Ouranos, le dieu du Ciel, elle engendra les six Titans et les six Titanides, puis les Cyclopes, suivi des Hécatonchires (les monstres aux cent bras) et enfin les Géants. De son frère Tartare, Gaïa donna naissance à une créature terrifiante, Typhon",
       "gender": "f",
-      "father": "chaos"
+      "father": "chaos",
+      "married": "ouranos"
     },
     {
       "name": "Pontos",
       "shortName": "pontos",
       "description": "Personnification de la mer, fils de Gaïa (la Terre) qu'elle engendra seule. Uni à sa mère Gaia, ses descendants sont Nérée, Thaumas, Phorcys, Ceto et Eurybie",
       "gender": "m",
-      "mother": "gaia"
+      "mother": "gaia",
+      "married": "gaia"
     },
     {
       "name": "Ouranos",
@@ -69,7 +72,8 @@
       "description": "Monstre marin. Fils de Pontos (le Flot) et de Gaïa. Marié à sa soeur, Céto, il en a de nombreux enfants, tous des monstres hideux connus sous le nom de Phorcydes.",
       "gender": "m",
       "father": "pontos",
-      "mother": "gaia"
+      "mother": "gaia",
+      "married": "ceto"
     },
     {
       "name": "Céto",
@@ -247,7 +251,7 @@
       "shortName": "clotho",
       "description": "Tisseuse des destins des hommes et des dieux. Benjamine des trois Moires, celle qui tisse le fil de la vie. C'est à elle que revient le choix de la date de naissance de chacun",
       "gender": "f",
-      "category": "Les moires",
+      "category": "moires",
       "father": "zeus",
       "mother": "themis"
     },
@@ -265,7 +269,7 @@
       "shortName": "atropos",
       "description": "Tisseuse des destins des hommes et des dieux, connue comme l'Inflexible. Fille de Zeus et Thémis. C'est Atropos qui choisit la forme de la mort et termine l'existence terrestre des mortels en leur coupant le fil de la vie",
       "gender": "f",
-      "category": "Les moires",
+      "category": "moires",
       "father": "zeus",
       "mother": "themis"
     },
@@ -465,20 +469,22 @@
     {
       "name": "Hypérion",
       "shortName": "hyperion",
-      "description": "Soleil au zénith, fils d'Ouranos (le Ciel) et de Gaïa, épouse Théia, sa sœur, dont il a trois enfants : Hélios (le Soleil), Séléné (la Lune) et Éos (l'Aurore)",
+      "description": "Soleil au zénith, fils d'Ouranos (le Ciel) et de Gaïa, épouse Théia, sa soeur, dont il a trois enfants : Hélios (le Soleil), Séléné (la Lune) et Éos (l'Aurore)",
       "gender": "m",
       "category": "titan",
       "father": "ouranos",
-      "mother": "gaia"
+      "mother": "gaia",
+      "married": "theia"
     },
     {
       "name": "Théia",
       "shortName": "theia",
-      "description": "Fille d'Ouranos (le Ciel) et de Gaïa (la Terre), épouse et sœur d'Hypérion, avec qui elle conçoit Hélios, Séléné, Éos et Titan, Elle aurait créé tous les métaux précieux tels que l'or, l'argent, etc.",
+      "description": "Fille d'Ouranos (le Ciel) et de Gaïa (la Terre), épouse et soeur d'Hypérion, avec qui elle conçoit Hélios, Séléné, Éos et Titan, Elle aurait créé tous les métaux précieux tels que l'or, l'argent, etc.",
       "gender": "f",
       "category": "titan",
       "father": "ouranos",
-      "mother": "gaia"
+      "mother": "gaia",
+      "married": "hyperion"
     },
     {
       "name": "Hélios",
@@ -511,7 +517,8 @@
       "gender": "m",
       "category": "titan",
       "father": "ouranos",
-      "mother": "gaia"
+      "mother": "gaia",
+      "married": "clymene"
     },
     {
       "name": "Thémis",
@@ -525,11 +532,12 @@
     {
       "name": "Téthys",
       "shortName": "tethys",
-      "description": "Divinité promordiale du monde marin, benjamine des Titanides, fille d'Ouranos (le Ciel) et de Gaïa (la Terre), sœur et épouse d'Océan",
+      "description": "Divinité promordiale du monde marin, benjamine des Titanides, fille d'Ouranos (le Ciel) et de Gaïa (la Terre), soeur et épouse d'Océan",
       "gender": "f",
       "category": "titan",
       "father": "ouranos",
-      "mother": "gaia"
+      "mother": "gaia",
+      "married": "ocean"
     },
     {
       "name": "Océan",
@@ -538,7 +546,8 @@
       "gender": "m",
       "category": "titan",
       "father": "ouranos",
-      "mother": "gaia"
+      "mother": "gaia",
+      "married": "tethys"
     },
     {
       "name": "Coéos",
@@ -983,7 +992,7 @@
     {
       "name": "Deucalion",
       "shortName": "deucalion",
-      "description": "Fils du Titan Prométhée et de Pronoia, seul survivant avec sa cousine et femme Pyrrha, du Déluge décidé par Zeus1",
+      "description": "Fils du Titan Prométhée et de Pronoia, seul survivant avec sa cousine et femme Pyrrha, du Déluge décidé par Zeus",
       "gender": "m",
       "father": "promethee"
     },
@@ -1038,7 +1047,8 @@
       "gender": "f",
       "category": "pleiade",
       "father": "atlas",
-      "mother": "pleione"
+      "mother": "pleione",
+      "married": "sisyphe"
     },
     {
       "name": "Maia",

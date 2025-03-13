@@ -15,4 +15,5 @@ public class God {
     private String father;
     private String mother;
     private String category;
+    private String married;
 }

@@ -11,6 +11,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.janusgraph.core.Multiplicity.MANY2ONE;
+import static org.janusgraph.core.Multiplicity.MULTI;
 
 @Service
 @RequiredArgsConstructor
@@ -27,6 +28,7 @@ public class SchemaImpl implements SchemaApi {
     public void createEdgeLabels(JanusGraphManagement management) {
         management.makeEdgeLabel(GodMetaData.FATHER).multiplicity(MANY2ONE).make();
         management.makeEdgeLabel(GodMetaData.MOTHER).multiplicity(MANY2ONE).make();
+        management.makeEdgeLabel(GodMetaData.MARRIED).multiplicity(MULTI).make();
     }
 
     @Override

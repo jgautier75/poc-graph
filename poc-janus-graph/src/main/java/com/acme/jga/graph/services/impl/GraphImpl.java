@@ -9,6 +9,7 @@ import com.acme.jga.graph.rest.dtos.VertexReadDto;
 import com.acme.jga.graph.services.api.GraphApi;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.util.Strings;
 import org.apache.tinkerpop.gremlin.process.traversal.dsl.graph.GraphTraversalSource;
 import org.apache.tinkerpop.gremlin.process.traversal.dsl.graph.__;
@@ -54,14 +55,38 @@ public class GraphImpl implements GraphApi {
         godsWithFathers.forEach(g -> addAncestor(g, g.getFather(), GodMetaData.FATHER));
         List<God> godsWithMothers = gods.stream().filter(g -> !Strings.isEmpty(g.getMother())).toList();
         godsWithMothers.forEach(g -> addAncestor(g, g.getMother(), GodMetaData.MOTHER));
+        insertMarriedRelations(gods);
     }
 
+    private void insertMarriedRelations(List<God> gods) {
+        List<God> marriedTo = gods.stream().filter(g -> !StringUtils.isEmpty(g.getMarried())).toList();
+        marriedTo.forEach(g -> addMarried(g));
+    }
 
-    private void addAncestor(God g, String ancestorShortName, String edgelLabel) {
+    private void addMarried(God g) {
+        Optional<Vertex> parentVertex = graphTraversalSource.V().has(GodMetaData.SHORT_NAME, g.getShortName()).tryNext();
+        Optional<Vertex> childVertex = graphTraversalSource.V().has(GodMetaData.SHORT_NAME, g.getMarried()).tryNext();
+        if (parentVertex.isPresent() && childVertex.isPresent()) {
+            Object fatherId = parentVertex.get().id();
+            Object childId = childVertex.get().id();
+            String edgeName = String.format("%s_to_%s", GodMetaData.MARRIED, g.getMarried());
+            boolean edgeAlreadyExists = graphTraversalSource.V(fatherId).out(edgeName).hasId(childId).hasNext();
+            log.info("Married relation to [{}]-[{}] already exists [{}]", g.getShortName(), g.getMarried(), edgeAlreadyExists);
+            if (!edgeAlreadyExists) {
+                log.info("Creating married relation [{}]-[{}] ", g.getShortName(), g.getMarried());
+                graphTraversalSource.tx().begin();
+                graphTraversalSource.addE(edgeName).from(__.V(fatherId)).to(__.V(childId)).iterate();
+                graphTraversalSource.tx().commit();
+            }
+        }
+
+    }
+
+    private void addAncestor(God g, String ancestorShortName, String edgeLabel) {
         Optional<Vertex> parentVertex = graphTraversalSource.V().has(GodMetaData.SHORT_NAME, ancestorShortName).tryNext();
         Optional<Vertex> childVertex = graphTraversalSource.V().has(GodMetaData.SHORT_NAME, g.getShortName()).tryNext();
         if (parentVertex.isPresent() && childVertex.isPresent()) {
-            String edgeName = String.format("%s_of_%s", edgelLabel, g.getShortName());
+            String edgeName = String.format("%s_of_%s", edgeLabel, g.getShortName());
             Object fatherId = parentVertex.get().id();
             Object childId = childVertex.get().id();
             boolean edgeAlreadyExists = graphTraversalSource.V(fatherId).out(edgeName).hasId(childId).hasNext();
