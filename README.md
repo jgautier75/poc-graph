@@ -44,3 +44,21 @@ g.V().count()
 * Create schema, vertices and edges either using "VERTEX-SCHEMA" in "Bruno" collection or use curl
 
 curl - X POST http://localhost:8080/api/v1/schema
+
+** Gremlin
+
+Deleting all vertices
+```
+g.V().drop()
+```
+
+** Visualizers:
+
+JanusGraph visualizer:  http://localhost:3001/
+GraphExp: http://localhost:8001/graphexp.html
+
+Connection: 
+* Server Address: 192.168.1.x
+* Server Port: 8182
+* Protocol: websocket
+* Gremlin version: 3.4

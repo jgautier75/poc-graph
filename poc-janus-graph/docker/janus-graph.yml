@@ -61,6 +61,13 @@ services:
       test: [ "CMD", "curl", "-f", "http://localhost:3001" ]
       interval: 10s
       retries: 3
+  graphexp:
+    image: jga-graphexp:latest
+    container_name: jce-graphexp
+    ports:
+      - "8001:80"
+    networks:
+      - jce-network
 networks:
   jce-network:
 volumes:
