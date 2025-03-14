@@ -72,3 +72,4 @@ networks:
   jce-network:
 volumes:
   janusgraph-default-data:
+  cassandra_data:

@@ -9,13 +9,15 @@ Credits: https://github.com/deviantony/docker-elk
 Containers
 
 
-| Service         | Version                       | Port | Description                               |
-|-----------------|-------------------------------|------|-------------------------------------------|
-| kibana          | 8.17.2                        | 5601 | Kibana                                    |
-| elasticsearch   | 8.17.2                        | 9200 | Elasticsearch                             |
-| logstash        | 8.17.2                        | 5044 | Logstash                                  |
-| janusgraph      | 1.2.0-20250219-143145.6c030f7 | 8182 | JanusGraph                                |
-| cassandra       | 4.0.17                        | 9042 | Cassandra                                 |                               
+| Service               | Version | Port | Description      |
+|-----------------------|---------|------|------------------|
+| janusgraph            | -       | 8182 | JanusGraph       |
+| cassandra             | 4.0.17  | 9042 | Cassandra        |
+| elasticsearch         | 8.17.2  | 9200 | Elasticsearch    |
+| janusgraph-visualizer | -       | 3001 | Graph visualizer |
+| graphexp              | -       | 8001 | Graph visualizer |
+
+                               
 
 **Connecting to Janus Graph**
 
@@ -55,7 +57,12 @@ g.V().drop()
 ** Visualizers:
 
 JanusGraph visualizer:  http://localhost:3001/
+
+![JanusGraphVisualizer](poc-janus-graph/docs/janusgraph.png)
+
 GraphExp: http://localhost:8001/graphexp.html
+
+![GraphExp](poc-janus-graph/docs/graphexp.png)
 
 Connection: 
 * Server Address: 192.168.1.x
