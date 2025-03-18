@@ -69,3 +69,20 @@ Connection:
 * Server Port: 8182
 * Protocol: websocket
 * Gremlin version: 3.4
+
+** Export:
+
+Either connect to gremlin console in jce-janusgraph container 
+
+```bash
+graph = JanusGraphFactory.open('cql:cassandra')
+graph.io(IoCore.graphml()).writeGraph("test.graphml");
+```
+
+Or use export REST function: 
+
+```
+GET http://localhost:8080/api/v1/graph
+```
+
+Then you can import graml file into Gephi ==> https://gephi.org/

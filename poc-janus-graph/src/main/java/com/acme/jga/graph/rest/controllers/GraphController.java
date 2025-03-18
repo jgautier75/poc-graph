@@ -46,4 +46,10 @@ public class GraphController {
         return ResponseEntity.ok(graphApi.findGodByShortName(shortName));
     }
 
+    @GetMapping(value = "/api/v1/graph")
+    public ResponseEntity<Void> exportGraph() {
+        graphApi.export();
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
 }

@@ -8,4 +8,5 @@ public interface GraphApi {
     void loadGoads() throws IOException;
     VertexReadDto findGodByShortName(String name);
     void dropAllData();
+    void export();
 }
