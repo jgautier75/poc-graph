@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
@@ -15,5 +17,5 @@ public class God {
     private String father;
     private String mother;
     private String category;
-    private String married;
+    private List<String> married;
 }

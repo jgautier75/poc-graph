@@ -11,7 +11,7 @@ services:
     networks:
       - jce-network
     healthcheck:
-      test: ["CMD", "bin/gremlin.sh", "-e", "scripts/remote-connect.groovy"]
+      test: [ "CMD", "bin/gremlin.sh", "-e", "scripts/remote-connect.groovy" ]
       interval: 10s
       timeout: 30s
       retries: 3
