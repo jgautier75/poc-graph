@@ -1,0 +1,30 @@
+meta {
+  name: GRAPH-EXPORT
+  type: http
+  seq: 9
+}
+
+get {
+  url: {{httpScheme}}://{{httpHost}}/{{baseUri}}/graph
+  body: none
+  auth: none
+}
+
+body:json {
+  {
+    "properties": [
+      {
+        "key": "name",
+        "value": "Chaos"
+      },
+      {
+        "key": "id",
+        "value": "{{uuid}}"
+      }
+    ]  
+  }
+}
+
+script:pre-request {
+  bru.setVar('uuid', require("uuid").v4());
+}
