@@ -1,13 +1,15 @@
 package com.acme.jga.graph.services.api;
 
-import org.janusgraph.core.schema.JanusGraphManagement;
+import java.io.IOException;
 
 public interface SchemaApi {
 
-    void createSchema(JanusGraphManagement management);
+    void createSchema();
 
-    void createEdgeLabels(JanusGraphManagement management);
+    void createIndexes();
 
-    void createIndexes(JanusGraphManagement management);
+    void createEdgeLabels();
+
+    void initSchema() throws IOException;
 
 }

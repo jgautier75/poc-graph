@@ -47,3 +47,5 @@ app:
       index_jgex_backend: elasticsearch
       index_jgex_index-name: jgex
       index_jgex_hostname: localhost
+      cluster_url: localhost
+      cluster_port: 8182

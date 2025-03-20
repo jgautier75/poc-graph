@@ -16,16 +16,11 @@ public class GodsConverter {
 
     public static Map<Object, Object> godToPropertyMap(God g) {
         Map<Object, Object> properties = new HashMap<>();
+        properties.put(GodMetaData.NAME, g.getName());
         properties.put(GodMetaData.SHORT_NAME, g.getShortName());
         properties.put(GodMetaData.GENDER, g.getGender());
         if (g.getDescription() != null) {
             properties.put(GodMetaData.DESCRIPTION, g.getDescription());
-        }
-        if (g.getFather() != null) {
-            properties.put(GodMetaData.FATHER, g.getFather());
-        }
-        if (g.getMother() != null) {
-            properties.put(GodMetaData.MOTHER, g.getMother());
         }
         if (g.getCategory() != null) {
             properties.put(GodMetaData.CATEGORY, g.getCategory());

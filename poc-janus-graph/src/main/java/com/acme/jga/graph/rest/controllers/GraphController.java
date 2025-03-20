@@ -5,7 +5,6 @@ import com.acme.jga.graph.services.api.GraphApi;
 import com.acme.jga.graph.services.api.SchemaApi;
 import lombok.RequiredArgsConstructor;
 import org.janusgraph.core.JanusGraph;
-import org.janusgraph.core.schema.JanusGraphManagement;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,12 +19,8 @@ public class GraphController {
     private final SchemaApi schemaApi;
 
     @PostMapping(value = "/api/v1/schema")
-    public ResponseEntity<Void> createSchema() {
-        JanusGraphManagement janusGraphManagement = janusGraph.openManagement();
-        schemaApi.createSchema(janusGraphManagement);
-        schemaApi.createEdgeLabels(janusGraphManagement);
-        schemaApi.createIndexes(janusGraphManagement);
-        janusGraphManagement.commit();
+    public ResponseEntity<Void> createSchema() throws IOException {
+        schemaApi.initSchema();
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 

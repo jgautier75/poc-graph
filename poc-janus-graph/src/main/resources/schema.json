@@ -1,0 +1,86 @@
+{
+  "vertexLabels": [
+    {
+      "label": "god"
+    }
+  ],
+  "edgeLabels": [
+    {
+      "label": "father",
+      "multiplicity": "MANY2ONE",
+      "unidirected": true
+    },
+    {
+      "label": "mother",
+      "multiplicity": "MANY2ONE",
+      "unidirected": true
+    },
+    {
+      "label": "married",
+      "multiplicity": "MULTI",
+      "unidirected": false
+    }
+  ],
+  "propertyKeys": [
+    {
+      "key": "shortName",
+      "className": "java.lang.String",
+      "cardinality": "SINGLE"
+    },
+    {
+      "key": "name",
+      "className": "java.lang.String",
+      "cardinality": "SINGLE"
+    },
+    {
+      "key": "description",
+      "className": "java.lang.String",
+      "cardinality": "SINGLE"
+    },
+    {
+      "key": "gender",
+      "className": "java.lang.String",
+      "cardinality": "SINGLE"
+    },
+    {
+      "key": "category",
+      "className": "java.lang.String",
+      "cardinality": "SINGLE"
+    }
+  ],
+  "compositeIndexes": [
+    {
+      "name": "byShortName",
+      "typeClass": "org.apache.tinkerpop.gremlin.structure.Vertex",
+      "indexOnly": "god",
+      "unique": true,
+      "keys": [
+        {
+          "propertyKey": "shortName"
+        }
+      ]
+    },
+    {
+      "name": "byName",
+      "indexOnly": "god",
+      "typeClass": "org.apache.tinkerpop.gremlin.structure.Vertex",
+      "unique": true,
+      "keys": [
+        {
+          "propertyKey": "name"
+        }
+      ]
+    },
+    {
+      "name": "byCategory",
+      "typeClass": "org.apache.tinkerpop.gremlin.structure.Vertex",
+      "indexOnly": "god",
+      "unique": false,
+      "keys": [
+        {
+          "propertyKey": "category"
+        }
+      ]
+    }
+  ]
+}

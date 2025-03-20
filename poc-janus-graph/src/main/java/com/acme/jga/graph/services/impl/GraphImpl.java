@@ -10,26 +10,31 @@ import com.acme.jga.graph.services.api.GraphApi;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.logging.log4j.util.Strings;
+import org.apache.tinkerpop.gremlin.driver.Client;
+import org.apache.tinkerpop.gremlin.process.traversal.P;
+import org.apache.tinkerpop.gremlin.process.traversal.Path;
 import org.apache.tinkerpop.gremlin.process.traversal.dsl.graph.GraphTraversal;
 import org.apache.tinkerpop.gremlin.process.traversal.dsl.graph.GraphTraversalSource;
 import org.apache.tinkerpop.gremlin.process.traversal.dsl.graph.__;
+import org.apache.tinkerpop.gremlin.structure.Edge;
 import org.apache.tinkerpop.gremlin.structure.Vertex;
 import org.apache.tinkerpop.gremlin.structure.io.IoCore;
 import org.apache.tinkerpop.gremlin.structure.io.graphson.GraphSONMapper;
 import org.apache.tinkerpop.gremlin.structure.io.graphson.GraphSONWriter;
 import org.janusgraph.core.JanusGraph;
+import org.janusgraph.core.schema.SchemaManager;
 import org.janusgraph.graphdb.tinkerpop.io.graphson.JanusGraphSONModuleV2d0;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.io.OutputStream;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
 import static com.acme.jga.graph.GodsConverter.godToPropertyMap;
+import static org.apache.tinkerpop.gremlin.process.traversal.dsl.graph.GraphTraversal.Symbols.from;
 
 @Service
 @RequiredArgsConstructor
@@ -38,6 +43,7 @@ public class GraphImpl implements GraphApi {
     private final GodsFeeder godsFeeder;
     private final GraphTraversalSource graphTraversalSource;
     private final JanusGraph janusGraph;
+    private final Client gremlinClient;
 
     @Override
     public void loadGoads() throws IOException {
@@ -70,8 +76,28 @@ public class GraphImpl implements GraphApi {
         }
     }
 
+    private void checkCreateEdgeLabels() {
+
+        // Create a JanusGraph instance (assuming your JanusGraph server is remote)
+        /*JanusGraph graph = (JanusGraph) graphTraversalSource.getGraph();*/
+
+        // Access the schema management
+        SchemaManager schemaManager = janusGraph.openManagement();
+
+        // Create an edge label "father"
+        if (!schemaManager.containsEdgeLabel(GodMetaData.FATHER)) {
+            schemaManager.makeEdgeLabel(GodMetaData.FATHER).make();
+            System.out.println("Edge label '" + GodMetaData.FATHER + "' created.");
+        }
+        // Create an edge label "mother"
+        if (!schemaManager.containsEdgeLabel(GodMetaData.MOTHER)) {
+            schemaManager.makeEdgeLabel(GodMetaData.MOTHER).make();
+            System.out.println("Edge label '" + GodMetaData.MOTHER + "' created.");
+        }
+    }
 
     private void insertAncestors(List<God> gods) {
+        checkCreateEdgeLabels();
         List<God> godsWithFathers = gods.stream().filter(g -> !Strings.isEmpty(g.getFather())).toList();
         godsWithFathers.forEach(g -> addAncestor(g, g.getFather(), GodMetaData.FATHER));
         List<God> godsWithMothers = gods.stream().filter(g -> !Strings.isEmpty(g.getMother())).toList();
@@ -111,14 +137,23 @@ public class GraphImpl implements GraphApi {
             String edgeName = String.format("%s_of_%s", edgeLabel, g.getShortName());
             Object fatherId = parentVertex.get().id();
             Object childId = childVertex.get().id();
-            boolean edgeAlreadyExists = graphTraversalSource.V(fatherId).out(edgeName).hasId(childId).hasNext();
-            log.info("Edge for ancestor [{}] with parent [{}] already exists [{}]", g.getShortName(), ancestorShortName, edgeAlreadyExists);
-            if (!edgeAlreadyExists) {
-                log.info("Creating ancestors for {} with parent {} ", g.getShortName(), ancestorShortName);
-                graphTraversalSource.tx().begin();
-                graphTraversalSource.addE(edgeName).from(__.V(fatherId)).to(__.V(childId)).iterate();
-                graphTraversalSource.tx().commit();
-            }
+
+            //g.V().has('name','marko').as('a').bothE().bothV().where(neq('a')).path()
+
+            /*Optional<Vertex> optVertex = graphTraversalSource.V(fatherId).as("a").outE().bothV().where(P.neq("a")).tryNext();
+            boolean edgeAlreadyExists = optVertex.isPresent();*/
+            //boolean edgeAlreadyExists = graphTraversalSource.V(fatherId).out(edgeLabel).hasId(childId).hasNext();
+            /*log.info("Edge for ancestor [{}] with parent [{}] already exists [{}]", g.getShortName(), ancestorShortName, edgeAlreadyExists);
+            if (!edgeAlreadyExists) {*/
+            log.info("Creating ancestors for [{}] with parent [{}] ", g.getShortName(), ancestorShortName);
+            graphTraversalSource.tx().begin();
+            /*graphTraversalSource.V(fatherId).addE(edgeLabel).to(__.V(childId)).iterate();*/
+            //graphTraversalSource.V(fatherId).out(edgeLabel).to(__.V(childId)).iterate();
+            //g.addE('knows').from(v1).to(v2).property('since', 2021).next()
+
+            Edge edge = graphTraversalSource.addE(edgeLabel).from(__.V(fatherId)).to(__.V(childId)).next();
+            graphTraversalSource.tx().commit();
+            /*}*/
         }
     }
 
@@ -132,7 +167,7 @@ public class GraphImpl implements GraphApi {
                 try {
                     graphTraversalSource.tx().begin();
                     Map<Object, Object> properties = godToPropertyMap(g);
-                    graphTraversalSource.addV(g.getName()).property(properties).next();
+                    graphTraversalSource.addV(SchemaImpl.VERTEX_GOD).property(properties).next();
                     graphTraversalSource.tx().commit();
                 } catch (Exception e) {
                     graphTraversalSource.tx().rollback();
@@ -140,6 +175,10 @@ public class GraphImpl implements GraphApi {
                 }
             }
         }
+    }
+
+    private boolean hasFather(God g, List<God> gods) {
+        return gods.stream().anyMatch(gl -> gl.getFather().equals(g.getShortName()));
     }
 
 }

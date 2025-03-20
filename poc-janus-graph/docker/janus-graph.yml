@@ -10,6 +10,8 @@ services:
       - "8182:8182"
     networks:
       - jce-network
+    volumes:
+      - "./janusgraph/init_schema.groovy:/tmp/init_schema.groovy"
     healthcheck:
       test: [ "CMD", "bin/gremlin.sh", "-e", "scripts/remote-connect.groovy" ]
       interval: 10s
