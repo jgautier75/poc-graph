@@ -10,21 +10,12 @@ import com.acme.jga.graph.services.api.GraphApi;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.logging.log4j.util.Strings;
-import org.apache.tinkerpop.gremlin.process.traversal.dsl.graph.GraphTraversal;
 import org.apache.tinkerpop.gremlin.process.traversal.dsl.graph.GraphTraversalSource;
 import org.apache.tinkerpop.gremlin.process.traversal.dsl.graph.__;
 import org.apache.tinkerpop.gremlin.structure.Vertex;
-import org.apache.tinkerpop.gremlin.structure.io.IoCore;
-import org.apache.tinkerpop.gremlin.structure.io.graphson.GraphSONMapper;
-import org.apache.tinkerpop.gremlin.structure.io.graphson.GraphSONWriter;
-import org.janusgraph.core.JanusGraph;
-import org.janusgraph.graphdb.tinkerpop.io.graphson.JanusGraphSONModuleV2d0;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
-import java.io.OutputStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -37,7 +28,6 @@ import static com.acme.jga.graph.GodsConverter.godToPropertyMap;
 public class GraphImpl implements GraphApi {
     private final GodsFeeder godsFeeder;
     private final GraphTraversalSource graphTraversalSource;
-    private final JanusGraph janusGraph;
 
     @Override
     public void loadGoads() throws IOException {
@@ -61,13 +51,9 @@ public class GraphImpl implements GraphApi {
 
     @Override
     public void export() {
-        String targetFile = System.getProperty("user.dir") + "/test.graphml";
-        log.info("Exporting graph to file {}", targetFile);
-        try {
-            graphTraversalSource.getGraph().io(IoCore.graphml()).writeGraph(targetFile);
-        } catch (IOException e) {
-            log.error(e.getMessage(), e);
-        }
+        String targetFile = "/tmp/mygraph.graphml";
+        log.info("Exporting graph to file [{}]", targetFile);
+        graphTraversalSource.io(targetFile).write().iterate();
     }
 
     private void insertAncestors(List<God> gods) {

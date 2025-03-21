@@ -38,12 +38,5 @@ logging:
 app:
   janusgraph:
     config:
-      gremlin_graph: org.janusgraph.core.JanusGraphFactory
-      storage_backend: cql
-      storage_hostname: localhost
-      storage_cql_keyspace: jgex
-      storage.cql.local-datacenter: datacenter1
-      basic.load-balancing-policy.local-datacenter: datacenter1
-      index_jgex_backend: elasticsearch
-      index_jgex_index-name: jgex
-      index_jgex_hostname: localhost
+      contact_point: localhost
+      contact_port: 8182

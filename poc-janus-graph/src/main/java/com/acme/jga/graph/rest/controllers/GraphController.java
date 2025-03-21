@@ -3,7 +3,6 @@ package com.acme.jga.graph.rest.controllers;
 import com.acme.jga.graph.rest.dtos.VertexReadDto;
 import com.acme.jga.graph.services.api.GraphApi;
 import lombok.RequiredArgsConstructor;
-import org.janusgraph.core.JanusGraph;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,7 +12,6 @@ import java.io.IOException;
 @RestController
 @RequiredArgsConstructor
 public class GraphController {
-    private final JanusGraph janusGraph;
     private final GraphApi graphApi;
 
     @DeleteMapping(value = "/api/v1/graph")
