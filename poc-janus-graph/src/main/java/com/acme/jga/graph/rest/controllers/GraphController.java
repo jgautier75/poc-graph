@@ -2,10 +2,8 @@ package com.acme.jga.graph.rest.controllers;
 
 import com.acme.jga.graph.rest.dtos.VertexReadDto;
 import com.acme.jga.graph.services.api.GraphApi;
-import com.acme.jga.graph.services.api.SchemaApi;
 import lombok.RequiredArgsConstructor;
 import org.janusgraph.core.JanusGraph;
-import org.janusgraph.core.schema.JanusGraphManagement;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,17 +15,6 @@ import java.io.IOException;
 public class GraphController {
     private final JanusGraph janusGraph;
     private final GraphApi graphApi;
-    private final SchemaApi schemaApi;
-
-    @PostMapping(value = "/api/v1/schema")
-    public ResponseEntity<Void> createSchema() {
-        JanusGraphManagement janusGraphManagement = janusGraph.openManagement();
-        schemaApi.createSchema(janusGraphManagement);
-        schemaApi.createEdgeLabels(janusGraphManagement);
-        schemaApi.createIndexes(janusGraphManagement);
-        janusGraphManagement.commit();
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-    }
 
     @DeleteMapping(value = "/api/v1/graph")
     public ResponseEntity<Void> deleteGraph() {

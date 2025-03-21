@@ -70,7 +70,6 @@ public class GraphImpl implements GraphApi {
         }
     }
 
-
     private void insertAncestors(List<God> gods) {
         List<God> godsWithFathers = gods.stream().filter(g -> !Strings.isEmpty(g.getFather())).toList();
         godsWithFathers.forEach(g -> addAncestor(g, g.getFather(), GodMetaData.FATHER));
@@ -91,13 +90,12 @@ public class GraphImpl implements GraphApi {
             if (parentVertex.isPresent() && childVertex.isPresent()) {
                 Object fatherId = parentVertex.get().id();
                 Object childId = childVertex.get().id();
-                String edgeName = String.format("%s_to_%s", GodMetaData.MARRIED, marriedTo);
-                boolean edgeAlreadyExists = graphTraversalSource.V(fatherId).out(edgeName).hasId(childId).hasNext();
+                boolean edgeAlreadyExists = graphTraversalSource.V(fatherId).out(GodMetaData.MARRIED).hasId(childId).hasNext();
                 log.info("Married relation to [{}]-[{}] already exists [{}]", g.getShortName(), marriedTo, edgeAlreadyExists);
                 if (!edgeAlreadyExists) {
                     log.info("Creating married relation [{}]-[{}] ", g.getShortName(), marriedTo);
                     graphTraversalSource.tx().begin();
-                    graphTraversalSource.addE(edgeName).from(__.V(fatherId)).to(__.V(childId)).iterate();
+                    graphTraversalSource.addE(GodMetaData.MARRIED).from(__.V(fatherId)).to(__.V(childId)).iterate();
                     graphTraversalSource.tx().commit();
                 }
             }
@@ -108,15 +106,14 @@ public class GraphImpl implements GraphApi {
         Optional<Vertex> parentVertex = graphTraversalSource.V().has(GodMetaData.SHORT_NAME, ancestorShortName).tryNext();
         Optional<Vertex> childVertex = graphTraversalSource.V().has(GodMetaData.SHORT_NAME, g.getShortName()).tryNext();
         if (parentVertex.isPresent() && childVertex.isPresent()) {
-            String edgeName = String.format("%s_of_%s", edgeLabel, g.getShortName());
             Object fatherId = parentVertex.get().id();
             Object childId = childVertex.get().id();
-            boolean edgeAlreadyExists = graphTraversalSource.V(fatherId).out(edgeName).hasId(childId).hasNext();
+            boolean edgeAlreadyExists = graphTraversalSource.V(fatherId).out(edgeLabel).hasId(childId).hasNext();
             log.info("Edge for ancestor [{}] with parent [{}] already exists [{}]", g.getShortName(), ancestorShortName, edgeAlreadyExists);
             if (!edgeAlreadyExists) {
                 log.info("Creating ancestors for {} with parent {} ", g.getShortName(), ancestorShortName);
                 graphTraversalSource.tx().begin();
-                graphTraversalSource.addE(edgeName).from(__.V(fatherId)).to(__.V(childId)).iterate();
+                graphTraversalSource.addE(edgeLabel).from(__.V(fatherId)).to(__.V(childId)).iterate();
                 graphTraversalSource.tx().commit();
             }
         }

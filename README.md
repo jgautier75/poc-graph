@@ -11,13 +11,11 @@ Containers
 
 | Service               | Version | Port | Description      |
 |-----------------------|---------|------|------------------|
-| janusgraph            | -       | 8182 | JanusGraph       |
+| janusgraph            | 1.1.0   | 8182 | JanusGraph       |
 | cassandra             | 4.0.17  | 9042 | Cassandra        |
 | elasticsearch         | 8.17.2  | 9200 | Elasticsearch    |
 | janusgraph-visualizer | -       | 3001 | Graph visualizer |
 | graphexp              | -       | 8001 | Graph visualizer |
-
-                               
 
 **Connecting to Janus Graph**
 
@@ -43,14 +41,18 @@ g.V().count()
 
 * Once done, launch spring-boot PocGraph application
 
-* Create schema, vertices and edges either using "VERTEX-SCHEMA" in "Bruno" collection or use curl
+* To initialize schema, connect to gremlin console and import init.groovy script
+
+```bash
+:load /tmp/init.groovy
+```
 
 curl - X POST http://localhost:8080/api/v1/schema
 
 ** Gremlin
 
 Deleting all vertices
-```
+```bash
 g.V().drop()
 ```
 
@@ -86,3 +88,21 @@ GET http://localhost:8080/api/v1/graph
 ```
 
 Then you can import graml file into Gephi ==> https://gephi.org/
+
+** Gremlin tips
+
+```bash
+graph = JanusGraphFactory.open('cql:cassandra')
+mgmt = graph.openManagement()
+mgmt.makeEdgeLabel("father").make()
+mgmt.makeEdgeLabel("mother").make()
+mgmt.makeEdgeLabel("married").make()
+mgmt.makePropertyKey("shortName").dataType(String.class).cardinality(Cardinality.SINGLE).make()
+mgmt.makePropertyKey("name").dataType(String.class).cardinality(Cardinality.SINGLE).make()
+mgmt.makePropertyKey("category").dataType(String.class).cardinality(Cardinality.SINGLE).make()
+mgmt.makePropertyKey("description").dataType(String.class).cardinality(Cardinality.SINGLE).make()
+mgmt.makePropertyKey("gender").dataType(String.class).cardinality(Cardinality.SINGLE).make()
+mgmt.buildIndex("byShortName", Vertex.class).addKey(mgmt.getPropertyKey("shortName")).buildCompositeIndex()
+mgmt.buildIndex("byName", Vertex.class).addKey(mgmt.getPropertyKey("name")).buildCompositeIndex()
+mgmt.buildIndex("byCategory", Vertex.class).addKey(mgmt.getPropertyKey("category")).buildCompositeIndex()
+```
