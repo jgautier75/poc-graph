@@ -1,4 +1,4 @@
-package com.acme.jga.graph;
+package com.acme.jga.graph.converters;
 
 import com.acme.jga.graph.parsing.pojo.God;
 import com.acme.jga.graph.parsing.pojo.GodMetaData;
@@ -34,9 +34,6 @@ public class GodsConverter {
         while (vertextIterator.hasNext()) {
             VertexProperty<Object> vprop = vertextIterator.next();
             switch (vprop.label()) {
-                case "uuid":
-                    vertexReadDto.setUuid(vprop.value().toString());
-                    break;
                 case "shortName":
                     vertexReadDto.setShortName(vprop.value().toString());
                     break;

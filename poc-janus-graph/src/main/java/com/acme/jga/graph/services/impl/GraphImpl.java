@@ -1,6 +1,6 @@
 package com.acme.jga.graph.services.impl;
 
-import com.acme.jga.graph.GodsConverter;
+import com.acme.jga.graph.converters.GodsConverter;
 import com.acme.jga.graph.parsing.pojo.God;
 import com.acme.jga.graph.parsing.pojo.GodMetaData;
 import com.acme.jga.graph.parsing.pojo.GodsList;
@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-import static com.acme.jga.graph.GodsConverter.godToPropertyMap;
+import static com.acme.jga.graph.converters.GodsConverter.godToPropertyMap;
 
 @Service
 @RequiredArgsConstructor
