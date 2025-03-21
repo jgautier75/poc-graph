@@ -89,7 +89,7 @@ GET http://localhost:8080/api/v1/graph
 
 Then you can import graml file into Gephi ==> https://gephi.org/
 
-** Gremlin tips
+** Init schema groovy script
 
 ```bash
 graph = JanusGraphFactory.open('cql:cassandra')
